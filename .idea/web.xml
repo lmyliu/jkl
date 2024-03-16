@@ -1,0 +1,36 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
+<head>
+    <title>党员信息列表</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>党员信息列表</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>入党时间</th>
+                <!-- 其他列 -->
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach items="${partyMembers}" var="member">
+                <tr>
+                    <td>${member.id}</td>
+                    <td>${member.name}</td>
+                    <td>${member.gender}</td>
+                    <td>${member.joinDate}</td>
+                    <!-- 其他列 -->
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
